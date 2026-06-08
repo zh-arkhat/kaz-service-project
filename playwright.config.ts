@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
@@ -18,5 +18,17 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['html']
+  ],
+
+  // 👇 ДОБАВЬ ВОТ ЭТО
+  projects: [
+    {
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome', // ← настоящий Google Chrome
+        headless: false,    // ← чтобы видеть браузер
+      },
+    },
   ],
 });

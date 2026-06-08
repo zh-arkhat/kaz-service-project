@@ -1,13 +1,16 @@
+import { Page } from '@playwright/test';
+
 export class LoginPage {
-  constructor(private page) {}
+  constructor(private page: Page) {}
 
   async open() {
-    await this.page.goto('https://example.com/login');
+    await this.page.goto('https://admin.probuy.kz/login');
   }
 
   async login(user: string, pass: string) {
-    await this.page.fill('#username', user);
-    await this.page.fill('#password', pass);
-    await this.page.click('#login');
+    await this.page.locator('#email').fill(user);
+    await this.page.locator('#password').fill(pass);
+
+    await this.page.getByRole('button', { name: 'Войти' }).click();
   }
 }
