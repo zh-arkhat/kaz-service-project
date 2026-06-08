@@ -9,15 +9,25 @@ export default defineConfig({
   fullyParallel: true,
 
   use: {
+    actionTimeout: 0,
+    navigationTimeout: 30000,
+      
+    
     headless: true,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    
+    // важно для чистоты отчёта
+    launchOptions: {
+    slowMo: 0
+  }
   },
 
   reporter: [
     ['list'],
-    ['html']
+    ['html'],
+    ['allure-playwright', {}] // 👈 ВАЖНО: пустой объект обязателен
   ],
 
   // 👇 ДОБАВЬ ВОТ ЭТО

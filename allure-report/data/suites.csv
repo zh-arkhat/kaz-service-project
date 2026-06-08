@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3490","User can login","chrome","Mon Jun 08 20:49:13 GMT+05:00 2026","passed","Mon Jun 08 20:49:17 GMT+05:00 2026","","ui\login.spec.ts","",""
