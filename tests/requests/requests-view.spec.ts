@@ -1,0 +1,13 @@
+import { test, expect } from '@playwright/test';
+import { RequestsViewScenario } from '../../scenarios/requests/requests-view.scenario';
+
+test('User can view new request', async ({ page }) => {
+  const scenario = new RequestsViewScenario(page);
+
+  await scenario.execute(
+    'arkhat.zh+admin@kazservice.kz',
+    'qwerty1!'
+  );
+
+  await expect(page).not.toHaveURL(/dashboard/);
+});
