@@ -10,4 +10,9 @@ test('User can view new request', async ({ page }) => {
   );
 
   await expect(page).not.toHaveURL(/dashboard/);
+
+  // Проверка: в элементе select есть опция "Новая"
+  const statusSelect = page.getByRole('combobox');
+  await expect(statusSelect).toBeVisible();
+  await expect(statusSelect).toContainText('Новая');
 });

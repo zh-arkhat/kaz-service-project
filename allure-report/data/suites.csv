@@ -1,2 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","3490","User can login","chrome","Mon Jun 08 20:49:13 GMT+05:00 2026","passed","Mon Jun 08 20:49:17 GMT+05:00 2026","","ui\login.spec.ts","",""
+"","7272","User can login","chrome","Tue Jun 09 19:26:31 GMT+05:00 2026","passed","Tue Jun 09 19:26:38 GMT+05:00 2026","","ui\login.spec.ts","",""
+"","4119","User can view new request","chrome","Tue Jun 09 20:34:33 GMT+05:00 2026","passed","Tue Jun 09 20:34:38 GMT+05:00 2026","","requests\requests-view.spec.ts","",""
+"","40902","User can change request status from Новая to В работе","chrome","Tue Jun 09 23:14:50 GMT+05:00 2026","broken","Tue Jun 09 23:15:31 GMT+05:00 2026","","requests\change-status.spec.ts","",""
+"","3756","User can login","chrome","Wed Jun 10 20:19:47 GMT+05:00 2026","passed","Wed Jun 10 20:19:51 GMT+05:00 2026","","auth\login.spec.ts","",""
