@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  globalSetup: require.resolve('./global-setup'),
   testDir: './tests',
 
   timeout: 40000,
@@ -9,6 +10,8 @@ export default defineConfig({
   fullyParallel: true,
 
   use: {
+    // use saved auth state created by global-setup
+    storageState: 'auth.json',
     actionTimeout: 0,
     navigationTimeout: 30000,
       
@@ -27,7 +30,7 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['html'],
-    ['allure-playwright', {}] // 👈 ВАЖНО: пустой объект обязателен
+    ['allure-playwright', {}]
   ],
 
   // 👇 ДОБАВЬ ВОТ ЭТО

@@ -4,7 +4,7 @@ import { ChangeStatusScenario } from '../../scenarios/requests/change-status.sce
 test('User can change request status from Новая to В работе (scenario)', async ({ page }) => {
   const scenario = new ChangeStatusScenario(page);
 
-  const orderNumber = await scenario.execute('arkhat.zh+admin@kazservice.kz', 'qwerty1!');
+  const orderNumber = await scenario.execute();
 
   // Verify that the same order now shows status "В работе"
   const updatedRow = page.locator(`tr:has-text("${orderNumber}")`).first();

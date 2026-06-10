@@ -14,9 +14,15 @@ export class ChangeStatusScenario {
     this.orderPage = new OrderPage(page);
   }
 
-  async execute(email: string, password: string) {
-    await this.loginPage.open();
-    await this.loginPage.login(email, password);
+  async execute(email?: string, password?: string) {
+    if (email && password) {
+      await this.loginPage.open();
+      await this.loginPage.login(email, password);
+    }
+
+    // Ensure we're on the application page (use stored auth state)
+    await this.page.goto('https://admin.probuy.kz');
+    await this.page.waitForLoadState('networkidle');
 
     await this.requestsPage.openRequestsSection();
 

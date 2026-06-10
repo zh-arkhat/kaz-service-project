@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+
+// This test performs the explicit login flow and must not reuse the global storage state
+test.use({ storageState: undefined });
 import { LoginScenario } from '../../scenarios/auth/login.scenario';
 
 test('User can login', async ({ page }) => {
